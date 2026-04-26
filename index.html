@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Shubham Chaudhry | Academic Portfolio</title>
+  <meta name="description" content="Academic portfolio of Dr. Shubham Chaudhry — Additive Manufacturing, Machine Learning, Computational Mechanics, Sustainable Materials, and Engineering Education." />
+  <meta property="og:title" content="Dr. Shubham Chaudhry | Academic Portfolio" />
+  <meta property="og:description" content="Research, teaching, supervision, publications, and academic profile for faculty positions." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --paper: #fffdf8;
+      --ink: #17212b;
+      --muted: #66727f;
+      --line: #ded5c8;
+      --navy: #0f2a43;
+      --gold: #b9862c;
+      --sage: #617d69;
+      --soft: #ece4d8;
+      --soft-blue: #e9eef2;
+      --shadow: 0 22px 70px rgba(15,42,67,.12);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #fffaf0 0, transparent 28rem), var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    p { color: var(--muted); }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247,244,238,.86);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(222,213,200,.8);
+    }
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+    .mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--navy);
+      color: #fff;
+      font-family: Playfair Display, serif;
+      font-size: 18px;
+      box-shadow: 0 8px 30px rgba(15,42,67,.22);
+    }
+    .navlinks { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+    .navlinks a {
+      padding: 9px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .navlinks a:hover { background: var(--soft); color: var(--navy); }
+
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 92px 24px 70px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 52px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: 12px;
+      margin-bottom: 22px;
+    }
+    .eyebrow::before { content: ""; width: 34px; height: 2px; background: var(--gold); }
+    h1 {
+      font-family: Playfair Display, Georgia, serif;
+      font-size: clamp(3rem, 7vw, 6.3rem);
+      line-height: .95;
+      letter-spacing: -.055em;
+      color: var(--navy);
+      margin-bottom: 24px;
+    }
+    .subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      color: #344557;
+      max-width: 760px;
+      margin-bottom: 28px;
+      font-weight: 500;
+    }
+    .hero-copy { max-width: 710px; font-size: 1.02rem; }
+    .cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 13px 20px;
+      font-weight: 800;
+      border: 1px solid var(--navy);
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(15,42,67,.14); }
+    .button.primary { background: var(--navy); color: #fff; }
+    .button.secondary { color: var(--navy); background: rgba(255,255,255,.45); }
+
+    .profile-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 9px;
+      background: linear-gradient(90deg, var(--navy), var(--gold), var(--sage));
+    }
+    .seal {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), #274866);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-family: Playfair Display, serif;
+      font-size: 42px;
+      margin-bottom: 24px;
+      border: 8px solid var(--soft-blue);
+    }
+    .profile-card h2 { font-size: 1.45rem; color: var(--navy); margin-bottom: 6px; }
+    .profile-card .role { color: var(--gold); font-weight: 800; margin-bottom: 20px; }
+    .quick-facts { display: grid; gap: 12px; margin-top: 22px; }
+    .fact {
+      background: #f6f1e9;
+      border: 1px solid var(--line);
+      padding: 13px 14px;
+      border-radius: 16px;
+      font-size: 14px;
+      color: #394657;
+    }
+    .fact strong { color: var(--navy); display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 3px; }
+
+    .metrics {
+      max-width: 1180px;
+      margin: -20px auto 28px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .metric {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px;
+    }
+    .metric .num { font-family: Playfair Display, serif; font-size: 2.2rem; color: var(--navy); line-height: 1; }
+    .metric .label { color: var(--muted); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; margin-top: 8px; }
+
+    section { padding: 76px 24px; }
+    .section-inner { max-width: 1180px; margin: 0 auto; }
+    .section-head { display: grid; grid-template-columns: .45fr 1fr; gap: 30px; margin-bottom: 34px; align-items: end; }
+    .section-kicker { color: var(--gold); font-weight: 800; text-transform: uppercase; letter-spacing: .12em; font-size: 12px; }
+    h2.section-title { font-family: Playfair Display, serif; color: var(--navy); font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1.05; letter-spacing: -.03em; }
+    .section-note { max-width: 720px; font-size: 1.02rem; }
+    .alt { background: rgba(236,228,216,.55); border-block: 1px solid var(--line); }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 34px rgba(15,42,67,.06);
+    }
+    .card h3 { color: var(--navy); font-size: 1.08rem; margin-bottom: 10px; }
+    .card p, .card li { color: var(--muted); font-size: .96rem; }
+    .tagrow { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .tag { border: 1px solid #dbc9aa; color: #815d20; background: #fff8e9; padding: 6px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; }
+
+    .timeline { display: grid; gap: 18px; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 24px;
+      padding: 24px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    .date { color: var(--gold); font-weight: 900; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }
+    .item-title { color: var(--navy); font-weight: 900; font-size: 1.1rem; margin-bottom: 2px; }
+    .item-place { color: #405166; font-weight: 700; margin-bottom: 10px; }
+    ul.clean { list-style: none; display: grid; gap: 8px; }
+    ul.clean li { position: relative; padding-left: 18px; }
+    ul.clean li::before { content: "•"; position: absolute; left: 0; color: var(--gold); font-weight: 900; }
+
+    .publication { display: grid; grid-template-columns: 84px 1fr; gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+    .publication:last-child { border-bottom: 0; }
+    .pub-year { font-family: Playfair Display, serif; color: var(--gold); font-size: 1.7rem; line-height: 1; }
+    .pub-title { color: var(--navy); font-weight: 800; }
+    .pub-meta { color: var(--muted); font-size: .94rem; margin-top: 4px; }
+
+    .course-list, .skill-list, .award-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .pill { background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 9px 13px; color: #445367; font-weight: 700; font-size: 14px; }
+
+    .contact-panel {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 34px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      box-shadow: var(--shadow);
+    }
+    .contact-panel h2 { font-family: Playfair Display, serif; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1; margin-bottom: 14px; }
+    .contact-panel p { color: rgba(255,255,255,.74); }
+    .contact-links { display: grid; gap: 12px; }
+    .contact-link { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); padding: 14px 16px; border-radius: 16px; color: #fff; font-weight: 800; overflow-wrap: anywhere; }
+    .contact-link span { display: block; color: rgba(255,255,255,.58); font-size: 12px; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 3px; }
+
+    footer { padding: 32px 24px; color: var(--muted); text-align: center; font-size: 14px; }
+
+    @media (max-width: 900px) {
+      .hero, .section-head, .contact-panel { grid-template-columns: 1fr; }
+      .metrics, .grid-3, .grid-2 { grid-template-columns: 1fr 1fr; }
+      .timeline-item { grid-template-columns: 1fr; gap: 10px; }
+      .navlinks { display: none; }
+    }
+    @media (max-width: 620px) {
+      .hero { padding-top: 56px; }
+      .metrics, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .publication { grid-template-columns: 1fr; }
+      .profile-card { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top"><span class="mark">SC</span><span>Dr. Shubham Chaudhry</span></a>
+      <div class="navlinks">
+        <a href="#research">Research</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#supervision">Supervision</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Faculty Candidate · Mechanical Engineering</div>
+        <h1>AI-driven additive manufacturing for sustainable aerospace materials.</h1>
+        <p class="subtitle">Ph.D. researcher and educator working across metal additive manufacturing, computational mechanics, machine learning, optimization, microstructure analysis, and sustainable powder recycling.</p>
+        <p class="hero-copy">I develop data-driven and physics-informed frameworks that connect process parameters, thermal history, microstructure, and mechanical performance in metal additive manufacturing. My academic profile combines experimental AM, finite element simulation, reduced-order modeling, AI/ML, engineering teaching, and student supervision.</p>
+        <div class="cta-row">
+          <a class="button primary" href="#research">View Research Profile</a>
+          <a class="button secondary" href="#publications">Selected Publications</a>
+        </div>
+      </div>
+
+      <aside class="profile-card" aria-label="Profile summary">
+        <div class="seal">SC</div>
+        <h2>Dr. Shubham Chaudhry, Ph.D.</h2>
+        <div class="role">Postdoctoral Research Fellow · UPEI</div>
+        <p>Academic researcher in additive manufacturing, computational modeling, and machine learning for aerospace and sustainable manufacturing applications.</p>
+        <div class="quick-facts">
+          <div class="fact"><strong>Current Location</strong>Charlottetown, Canada</div>
+          <div class="fact"><strong>Research Area</strong>AM · ML · Computational Mechanics · Sustainable Materials</div>
+          <div class="fact"><strong>Teaching Areas</strong>FEM · CFD · Heat Transfer · Structural Analysis · AI/ML</div>
+          <div class="fact"><strong>Email</strong><a href="mailto:shubhamiiserk@gmail.com">shubhamiiserk@gmail.com</a></div>
+        </div>
+      </aside>
+    </section>
+
+    <div class="metrics" aria-label="Academic metrics">
+      <div class="metric"><div class="num">7+</div><div class="label">Years research & teaching</div></div>
+      <div class="metric"><div class="num">10</div><div class="label">Publications & conferences</div></div>
+      <div class="metric"><div class="num">5</div><div class="label">Supervised students</div></div>
+      <div class="metric"><div class="num">0.0003</div><div class="label">Relative L2 error in ROM</div></div>
+    </div>
+
+    <section id="research" class="alt">
+      <div class="section-inner">
+        <div class="section-head">
+          <div class="section-kicker">Research Agenda</div>
+          <div>
+            <h2 class="section-title">From process parameters to reliable, sustainable AM components.</h2>
+            <p class="section-note">My work focuses on the scientific and computational bridge between additive manufacturing process design, microstructure evolution, material performance, uncertainty, and sustainability.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>AI for Additive Manufacturing</h3>
+            <p>Machine learning models for process optimization, reduced-order modeling, uncertainty analysis, and data-driven prediction of AM outcomes.</p>
+            <div class="tagrow"><span class="tag">ANN</span><span class="tag">CAE-MLP</span><span class="tag">POD-ANN</span></div>
+          </article>
+          <article class="card">
+            <h3>Process–Microstructure–Property Links</h3>
+            <p>Experimental and computational methods to understand how AM process windows influence microstructure, tensile behavior, fatigue response, and structural integrity.</p>
+            <div class="tagrow"><span class="tag">LPBF</span><span class="tag">Ti-6Al-4V</span><span class="tag">Microstructure</span></div>
+          </article>
+          <article class="card">
+            <h3>Sustainable Metal Powder Recycling</h3>
+            <p>Research on recyclability, degradation mechanisms, and sustainable reuse of metal powders for reducing cost, waste, and environmental impact in AM.</p>
+            <div class="tagrow"><span class="tag">SS316</span><span class="tag">Powder reuse</span><span class="tag">Net zero</span></div>
+          </article>
+          <article class="card">
+            <h3>Computational Mechanics</h3>
+            <p>Thermo-mechanical finite element modeling of SLM/LPBF processes, calibration algorithms, residual stress analysis, and structural performance evaluation.</p>
+            <div class="tagrow"><span class="tag">ANSYS</span><span class="tag">FEA</span><span class="tag">Thermal-structural</span></div>
+          </article>
+          <article class="card">
+            <h3>Optimization & Inverse Design</h3>
+            <p>Genetic algorithms, differential evolution, and particle swarm optimization for identifying optimal AM process parameters and material performance targets.</p>
+            <div class="tagrow"><span class="tag">GA</span><span class="tag">DE</span><span class="tag">PSO</span></div>
+          </article>
+          <article class="card">
+            <h3>Digital Twin for AM</h3>
+            <p>Long-term vision: integrated sensing, simulation, surrogate modeling, and decision-making loops for intelligent additive manufacturing systems.</p>
+            <div class="tagrow"><span class="tag">Digital twin</span><span class="tag">AM monitoring</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <div class="section-inner">
+        <div class="section-head">
+          <div class="section-kicker">Teaching Philosophy</div>
+          <div>
+            <h2 class="section-title">Engineering education through simulation, experiments, and applied problem solving.</h2>
+            <p class="section-note">My teaching approach connects theory with hands-on tutorials, computational tools, design problems, and research-inspired examples that help students see engineering as a living, applied discipline.</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Teaching Experience</h3>
+            <div class="timeline">
+              <div>
+                <div class="date">Jan 2022 – May 2022</div>
+                <div class="item-title">Teaching Assistant · Application of the Finite Element Method</div>
+                <p>Facilitated FEM sessions, hands-on Workbench tutorials, and student mentoring in structural and thermal analysis.</p>
+              </div>
+              <div>
+                <div class="date">Sep 2021 – Dec 2021</div>
+                <div class="item-title">Teaching Assistant · Advanced Fluid Mechanics</div>
+                <p>Conducted tutorials in compressible and incompressible fluid dynamics, including CFD demonstrations using ANSYS Fluent.</p>
+              </div>
+              <div>
+                <div class="date">Aug 2015 – May 2018</div>
+                <div class="item-title">Teacher · Ek Pehal</div>
+                <p>Taught science and mathematics, designed curriculum materials, and supported volunteer training and student mentorship.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Courses I Can Teach</h3>
+            <div class="course-list">
+              <span class="pill">Finite Element Method</span>
+              <span class="pill">Computational Fluid Dynamics</span>
+              <span class="pill">Introduction to AI/ML</span>
+              <span class="pill">Heat Transfer</span>
+              <span class="pill">Structural Analysis</span>
+              <span class="pill">Fluid Dynamics</span>
+              <span class="pill">Additive Manufacturing</span>
+              <span class="pill">Computational Mechanics</span>
+              <span class="pill">Engineering Optimization</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="alt">
+      <div class="section-inner">
+        <div class="section-head">
+          <div class="section-kicker">Academic Path</div>
+          <div>
+            <h2 class="section-title">Research experience across universities, aerospace, and industry collaboration.</h2>
+          </div>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="date">Sep 2025 – Present</div>
+            <div>
+              <div class="item-title">Postdoctoral Research Fellow</div>
+              <div class="item-place">Sustainability and Design Engineering, University of Prince Edward Island</div>
+              <ul class="clean">
+                <li>Developing machine learning models for rare earth mineral deposit identification and critical-material exploration.</li>
+                <li>Applying AI-based microstructure analysis to process–structure relationships in metal additive manufacturing.</li>
+                <li>Investigating metal powder recyclability and degradation mechanisms for sustainable powder-based AM.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="date">Mar 2026 – Present</div>
+            <div>
+              <div class="item-title">Mitacs Research Intern</div>
+              <div class="item-place">WEICAN, Charlottetown</div>
+              <ul class="clean">
+                <li>Designing AI-driven and federated learning solutions for efficient, reliable wind power systems.</li>
+                <li>Building ML models for renewable energy data analysis and optimization.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="date">Oct 2024 – Mar 2025</div>
+            <div>
+              <div class="item-title">Research Associate</div>
+              <div class="item-place">Aerospace and Mechanical Engineering, Royal Military College of Canada</div>
+              <ul class="clean">
+                <li>Conducted experimental parametric optimization for AM aerospace components with focus on microstructure and fatigue resistance.</li>
+                <li>Performed tensile testing, fatigue analysis, and microstructural characterization to establish process-property relationships.</li>
+                <li>Led a team of four researchers to enhance parametric optimization workflows for aerospace applications.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="date">Jan 2018 – Oct 2023</div>
+            <div>
+              <div class="item-title">Doctoral Researcher</div>
+              <div class="item-place">Mechanical Engineering, ÉTS / University of Québec, Montréal</div>
+              <ul class="clean">
+                <li>Developed non-intrusive reduced-order models for SLM-built parts using CAE-MLP and POD-ANN frameworks.</li>
+                <li>Achieved relative L2 error of 0.0003 in ROM prediction and 0.2% error in ML-assisted AM optimization.</li>
+                <li>Applied Monte Carlo simulation, Sobol sensitivity analysis, and optimization algorithms for AM parameter identification.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-inner">
+        <div class="section-head">
+          <div class="section-kicker">Education</div>
+          <div><h2 class="section-title">Academic training in mechanical engineering, machine learning, physics, and computational modeling.</h2></div>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Ph.D. in Mechanical Engineering and Machine Learning</h3>
+            <p><strong>ÉTS, University of Québec, Montréal, Canada · 2018–2023</strong></p>
+            <p>Thesis: Optimizing the structural properties of metal 3D printed parts for aerospace application using machine learning.</p>
+          </div>
+          <div class="card">
+            <h3>Bachelor of Science & Master of Science in Physics</h3>
+            <p><strong>IISER Kolkata, India · 2013–2017</strong></p>
+            <p>Thesis: Analysis of flow and heat transfer in a radial jet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="alt">
+      <div class="section-inner">
+        <div class="section-head">
+          <div class="section-kicker">Publications</div>
+          <div>
+            <h2 class="section-title">Selected scholarly contributions.</h2>
+            <p class="section-note">Journal articles and conference contributions across additive manufacturing, reduced-order modeling, computational mechanics, microstructure-property modeling, and thermo-hydrodynamics.</p>
+          </div>
+        </div>
+        <div class="card">
+          <article class="publication"><div class="pub-year">2026</div><div><div class="pub-title">Recycled Stainless Steel as a Sustainable Feedstock for Direct Metal Laser Sintering: Challenges and Opportunities</div><div class="pub-meta">Journal of Manufacturing and Materials Processing, 10(2), 51.</div></div></article>
+          <article class="publication"><div class="pub-year">2025</div><div><div class="pub-title">Data-driven non-intrusive reduced order modelling of selective laser melting additive manufacturing process using POD and convolutional autoencoder</div><div class="pub-meta">Advanced Modeling and Simulation in Engineering Sciences, 12(1), 22.</div></div></article>
+          <article class="publication"><div class="pub-year">2025</div><div><div class="pub-title">Experimental and Numerical Modal Analysis of a Honeycomb Panel for Aircraft Structures Application</div><div class="pub-meta">ASME Aerospace Structures, Structural Dynamics, and Materials Conference.</div></div></article>
+          <article class="publication"><div class="pub-year">2023</div><div><div class="pub-title">Sensitivity and Uncertainty Analysis of SLM Process Using Artificial Neural Network</div><div class="pub-meta">Advances in Integrated Design and Production II, Springer.</div></div></article>
+          <article class="publication"><div class="pub-year">2022</div><div><div class="pub-title">A comparative study of machine learning methods for computational modelling of the selective laser melting additive manufacturing process</div><div class="pub-meta">Applied Sciences, 12(5), 2324.</div></div></article>
+          <article class="publication"><div class="pub-year">2022</div><div><div class="pub-title">Computational modelling of SLM additive manufacturing of metals</div><div class="pub-meta">International Journal of Manufacturing Research, 17(4), 389–421.</div></div></article>
+          <article class="publication"><div class="pub-year">2018</div><div><div class="pub-title">Effects of gravity on the thermo-hydrodynamics of moving contact lines</div><div class="pub-meta">Physics of Fluids, 30(4), 042109.</div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="supervision">
+      <div class="section-inner">
+        <div class="section-head">
+          <div class="section-kicker">Mentorship</div>
+          <div><h2 class="section-title">Student supervision and academic leadership.</h2></div>
+        </div>
+        <div class="grid-3">
+          <div class="card"><h3>Ph.D. Co-Supervision</h3><p>Liem Huynh and David Holsworth, Royal Military College of Canada.</p></div>
+          <div class="card"><h3>Master’s Co-Supervision</h3><p>Syed Imran Ali, University of Prince Edward Island.</p></div>
+          <div class="card"><h3>MITACS Exchange Students</h3><p>Pratyush Bhatt and Yash Kumar, ÉTS Montréal.</p></div>
+        </div>
+        <div class="grid-2" style="margin-top:18px;">
+          <div class="card"><h3>Leadership</h3><p>Lab Coordinator at ÉTS, managing supplies, budgets, procurement, and support for research and academic activities.</p></div>
+          <div class="card"><h3>Community Engagement</h3><p>Co-founder of Ek Pehal NGO, supporting educational outreach, volunteer training, and science/mathematics learning.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="alt">
+      <div class="section-inner">
+        <div class="section-head">
+          <div class="section-kicker">Technical Profile</div>
+          <div><h2 class="section-title">Tools for computational research and engineering education.</h2></div>
+        </div>
+        <div class="grid-2">
+          <div class="card"><h3>Programming & ML</h3><div class="skill-list"><span class="pill">Python</span><span class="pill">SQL</span><span class="pill">R</span><span class="pill">Matlab</span><span class="pill">Fortran</span><span class="pill">C++</span><span class="pill">TensorFlow</span><span class="pill">Scikit-Learn</span><span class="pill">XGBoost</span><span class="pill">Keras</span></div></div>
+          <div class="card"><h3>Simulation & Engineering Software</h3><div class="skill-list"><span class="pill">ANSYS Workbench</span><span class="pill">ANSYS Fluent</span><span class="pill">Workbench Additive</span><span class="pill">ANSYS Additive Print</span><span class="pill">SolidWorks</span><span class="pill">APDL</span><span class="pill">COMSOL</span><span class="pill">Paraview</span><span class="pill">LaTeX</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards">
+      <div class="section-inner">
+        <div class="section-head">
+          <div class="section-kicker">Honors</div>
+          <div><h2 class="section-title">Awards and fellowships.</h2></div>
+        </div>
+        <div class="award-list">
+          <span class="pill">Mitacs Research Fellowship · 2026</span>
+          <span class="pill">Excellence Award for Ph.D. Research · 2023</span>
+          <span class="pill">ÉTS Institute Fellowship · 2018–2023</span>
+          <span class="pill">INSPIRE Fellowship · MS · 2015–2017</span>
+          <span class="pill">INSPIRE Fellowship · BS · 2013–2015</span>
+          <span class="pill">Haryana State Scholarship · Top 5%</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-inner">
+        <div class="contact-panel">
+          <div>
+            <h2>Open to faculty, research, and collaboration opportunities.</h2>
+            <p>I am interested in academic roles and collaborations at the intersection of additive manufacturing, machine learning, computational mechanics, aerospace structures, renewable energy, and sustainable materials.</p>
+          </div>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:shubhamiiserk@gmail.com"><span>Email</span>shubhamiiserk@gmail.com</a>
+            <a class="contact-link" href="tel:+14388264041"><span>Phone</span>+1-438-826-4041</a>
+            <a class="contact-link" href="https://linkedin.com/shubham"><span>LinkedIn</span>linkedin.com/shubham</a>
+            <a class="contact-link" href="https://Googlescholar.com/shubham"><span>Google Scholar</span>Googlescholar.com/shubham</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Dr. Shubham Chaudhry · Academic Portfolio for Faculty Applications
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
